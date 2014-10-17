@@ -35,7 +35,7 @@ end
 private
 
 def client_params
-  params.require(:client).permit(:login, :password)
+  params.require(:client).permit(:name, :surname, :phone, :birth_date, :personal_id)
 end
 
 def set_client
