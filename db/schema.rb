@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017104227) do
+ActiveRecord::Schema.define(version: 20141017134847) do
+
+  create_table "autos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "make"
+    t.string   "model"
+    t.string   "year"
+    t.string   "license_plate"
+  end
 
   create_table "rents", force: true do |t|
     t.datetime "created_at"
