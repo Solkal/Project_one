@@ -8,13 +8,16 @@ golf:
   make: Volkswagen
   model: Golf
   year: 2009
+  license_plate: WAW767990
 
 mercedes:
   make: Mercedes
   model: S
   year: 2012
+  license_plate: WAW567666
 
 audi:
   make: Audi
   model: A8
   year: 2013
+  license_plate: WAW6678688

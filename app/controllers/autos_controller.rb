@@ -38,7 +38,7 @@ class AutosController < ApplicationController
 	end
 	
 	def auto_params
-		params.require(:auto).permit(:make, :model, :year)
+		params.require(:auto).permit(:make, :model, :year, :license_plate)
 	end
 
 end
