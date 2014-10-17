@@ -5,16 +5,16 @@
 # below each fixture, per the syntax in the comments below
 #
 golf:
-	make: Volkswagen
-	model: Golf
-	year: 2009
+  make: Volkswagen
+  model: Golf
+  year: 2009
 
 mercedes:
-	make: Mercedes
-	model: S
-	year: 2012
+  make: Mercedes
+  model: S
+  year: 2012
 
 audi:
-	make: Audi
-	model: A8
-	year: 2013
+  make: Audi
+  model: A8
+  year: 2013
