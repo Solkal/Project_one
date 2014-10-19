@@ -1,0 +1,31 @@
+<h1>Lista samochodów na stanie wypożyczalni:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Marka</th>
+      <th>Model</th>
+      <th>Rok produkcji</th>
+      <th>Numer rejestracyjny</th>
+      <th>Edycja</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @autos.each_with_index do |auto, index| %>
+
+      <%= content_tag "tr", :class => index.even? ? "even-class" : "odd-class" do %>
+
+        <td><%= auto.make %></td>
+        <td><%= auto.model %></td>
+        <td><%= auto.year %></td>
+        <td><%= auto.license_plate %></td>
+        <td><%= link_to "Edytuj " , edit_auto_path(auto) %></td>
+        <td><%= link_to "Usuń" , auto, method: :delete, data: { confirm: "Czy na pewno skasować samochód #{auto.make} #{auto.model}?" }  %></td>
+      </tr>  
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Dodaj nowy samochód', new_auto_path %>
+<br>
