@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
   end
 
   def new
-    @clients = Client.new
+    @client = Client.new
   end
 
   def create
@@ -43,5 +43,4 @@ private
     @client = Client.find(params[:id])
   end
 
-  end
 end

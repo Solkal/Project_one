@@ -1,0 +1,31 @@
+<h1>Użytkownicy:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Telefon</th>
+      <th>Data urodzenia</th>
+      <th>Pesel</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each_with_index do |client, index| %>
+
+      <%= content_tag "tr", :class => index.even? ? "even-class" : "odd-class" do %>
+
+        <td><%= client.name %></td>
+        <td><%= client.surname %></td>
+        <td><%= client.phone %></td>
+        <td><%= client.birth_date %></td>
+        <td><%= client.personal_id %></td>
+        <td><%= link_to "Edytuj " , edit_client_path(client) %></td>
+        <td><%= link_to "Usuń" , client, method: :delete, data: { confirm: "Czy na pewno usunać klienta #{client.name} #{client.surname}?" }  %></td>
+      </tr>  
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Dodaj nowego klienta', new_client_path %>
