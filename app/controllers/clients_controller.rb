@@ -26,7 +26,7 @@ class ClientsController < ApplicationController
   end
 
   def update
-    if client.update(client_params)
+    if @client.update(client_params)
       redirect_to @client
     else
       render "edit"
