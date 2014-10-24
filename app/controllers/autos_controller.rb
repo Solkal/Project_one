@@ -4,7 +4,6 @@ class AutosController < ApplicationController
 	
 	def index
    @search = Auto.search do
-     #keywords 'Audi'
      keywords params[:search]
    end
    @autos = @search.results
