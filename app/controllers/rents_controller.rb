@@ -52,4 +52,3 @@ class RentsController < ApplicationController
 
 end
 
-end
