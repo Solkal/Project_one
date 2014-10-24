@@ -1,8 +1,13 @@
 class AutosController < ApplicationController
 
 	before_action :set_auto, only: [:edit, :update, :destroy, :show]
+	
 	def index
-		@autos = Auto.all
+   @search = Auto.search do
+     #keywords 'Audi'
+     keywords params[:search]
+   end
+   @autos = @search.results
 	end
 
 	def new
@@ -37,6 +42,7 @@ class AutosController < ApplicationController
 		@auto =Auto.find(params[:id])
 	end
 	
+
 	def auto_params
 		params.require(:auto).permit(:make, :model, :year, :license_plate)
 	end

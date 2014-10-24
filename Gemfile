@@ -31,6 +31,11 @@ gem 'simple_form'
 group :test do
   gem 'factory_girl_rails'
 end
+
+gem 'sunspot_rails'
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+
+# gem 'twitter-typeahead-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
