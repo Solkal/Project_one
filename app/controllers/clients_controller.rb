@@ -30,6 +30,7 @@ def update
     redirect_to clients_path
   else
     render "edit"
+  end
 end
 
 private
