@@ -11,10 +11,8 @@ class RentsController < ApplicationController
 
   def create
     @rent = Rent.new(permitted_params)
-    if @rent.valid?
-      @rent.user = current_user
-      @rent.save
-      redirect_to rent_path(@rent), notice: 'Rent was successfully created.' 
+    if @rent.save
+      redirect_to rents_path, notice: 'Rent was successfully created.' 
     else
       render :new
     end

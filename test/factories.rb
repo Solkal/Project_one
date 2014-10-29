@@ -13,4 +13,5 @@ FactoryGirl.define do
   birth_date "1989-01-17"
   personal_id "89011712345"
   end
+
 end
