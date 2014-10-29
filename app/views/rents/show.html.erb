@@ -1,0 +1,19 @@
+<p>
+  <strong>Osoba:</strong>
+  <%= @rent.client_id %>
+</p>
+<p>
+  <strong>Samochód:</strong>
+  <%= @rent.auto_id %>
+</p>
+<p>
+  <strong>Data wypożyczenia:</strong>
+  <%= @rent.date_start %>
+</p>
+<p>
+  <strong>Data zwrotu:</strong>
+  <%= @rent.date_end %>
+</p>
+
+<%= link_to 'Edytuj', edit_rent_path(@rent) %> |
+<%= link_to 'Powrót', rents_path %>
