@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017135655) do
+ActiveRecord::Schema.define(version: 20141024123605) do
 
   create_table "autos", force: true do |t|
     t.datetime "created_at"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20141017135655) do
     t.string   "name"
     t.string   "surname"
     t.integer  "phone"
-    t.integer  "birth_date"
     t.integer  "personal_id"
+    t.date     "birth_date"
   end
 
   create_table "rents", force: true do |t|

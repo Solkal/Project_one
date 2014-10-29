@@ -4,20 +4,20 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-golf:
+one:
   make: Volkswagen
   model: Golf
-  year: 2009
-  license_plate: WAW767990
+  year: 2010
+  license_plate: WI 76799
 
-mercedes:
+two:
   make: Mercedes
   model: S
   year: 2012
-  license_plate: WAW567666
+  license_plate: WD 56766
 
-audi:
+three:
   make: Audi
   model: A8
   year: 2013
-  license_plate: WAW6678688
+  license_plate: WZ 66786
