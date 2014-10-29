@@ -32,7 +32,7 @@ group :test do
   gem 'factory_girl_rails'
  	gem 'sunspot_test'
 end
-
+gem 'will_paginate', '~> 3.0'
 gem 'sunspot_rails'
 gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 

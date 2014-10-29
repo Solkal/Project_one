@@ -1,3 +1,86 @@
-<%= link_to "Clients", clients_path %> 
-<br>
-<%= link_to "Cars", autos_path %>
+<h1> Rent a Car!</h1>
+
+<div>
+  <h1>Lista samochodów na stanie wypożyczalni:</h1>
+  <%= will_paginate @autos_paginate %>
+  <table>
+    <thead>
+      <tr>
+        <th>Marka</th>
+        <th>Model</th>
+        <th>Rok produkcji</th>
+        <th>Numer rejestracyjny</th>
+        <th>Edycja</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @autos.each_with_index do |auto, index| %>
+
+      <%= content_tag "tr", :class => index.even? ? "even-class" : "odd-class" do %>
+
+      <td><%= auto.make %></td>
+      <td><%= auto.model %></td>
+      <td><%= auto.year %></td>
+      <td><%= auto.license_plate %></td>
+      <td><%= link_to "Edytuj " , edit_auto_path(auto) %></td>
+      <td><%= link_to "Usuń" , auto, method: :delete, data: { confirm: "Czy na pewno skasować samochód #{auto.make} #{auto.model}?" }  %></td>
+    </tr>  
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Dodaj nowy samochód', new_auto_path %>
+<h2>Wyszukaj samochód:</h2>
+
+<%= form_tag autos_path, method: 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Szukaj", name: nil %>
+</p>
+<% end %>
+</div>
+
+<div>
+  <h1>Użytkownicy:</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Telefon</th>
+        <th>Data urodzenia</th>
+        <th>Pesel</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @clients.each_with_index do |client, index| %>
+
+      <%= content_tag "tr", :class => index.even? ? "even-class" : "odd-class" do %>
+
+      <td><%= client.name %></td>
+      <td><%= client.surname %></td>
+      <td><%= client.phone %></td>
+      <td><%= client.birth_date %></td>
+      <td><%= client.personal_id %></td>
+      <td><%= link_to "Edytuj " , edit_client_path(client) %></td>
+      <td><%= link_to "Usuń" , client, method: :delete, data: { confirm: "Czy na pewno usunać klienta #{client.name} #{client.surname}?" }  %></td>
+    </tr>  
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @clients_paginate %>
+<%= link_to 'Dodaj nowego klienta', new_client_path %>
+<h2>Wyszukaj klienta:</h2>
+
+<%= form_tag clients_path, method: 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Szukaj", name: nil %>
+</p>
+<% end %>
+</div>

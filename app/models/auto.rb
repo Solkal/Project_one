@@ -5,6 +5,7 @@ class Auto < ActiveRecord::Base
     message: "license_plate is invalid" }
 	
 	has_many :rents
+	belongs_to :user
 
 	searchable do
 	    text  :make
