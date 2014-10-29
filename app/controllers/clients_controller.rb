@@ -7,6 +7,16 @@ class ClientsController < ApplicationController
     @clients = Client.all
   end
 
+  def search
+    @search = Client.search do
+      keywords params[:query]
+    end
+    @clients = @search.results
+    respond_to do |format|
+      format.html { render action: "index" }
+    end
+  end
+
   def new
     @client = Client.new
   end

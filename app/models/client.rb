@@ -7,4 +7,5 @@ class Client < ActiveRecord::Base
   #simple validate for personal_id
   validates :personal_id, uniqueness: true, format: { with: /[1-9]{1}[1-9]{10}/ }
   has_many :rents
+  belongs_to :user
 end
