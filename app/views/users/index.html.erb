@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-      <% @autos.each_with_index do |auto, index| %>
+      <% @autos_paginate.each_with_index do |auto, index| %>
 
       <%= content_tag "tr", :class => index.even? ? "even-class" : "odd-class" do %>
 
@@ -57,7 +57,7 @@
     </thead>
 
     <tbody>
-      <% @clients.each_with_index do |client, index| %>
+      <% @clients_paginate.each_with_index do |client, index| %>
 
       <%= content_tag "tr", :class => index.even? ? "even-class" : "odd-class" do %>
 
