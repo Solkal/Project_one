@@ -45,4 +45,10 @@ class AutosControllerTest < ActionController::TestCase
         assert_equal 'A8', updated_auto.model
     end
 
+    test 'searching' do
+        auto = FactoryGirl.create(:auto, model: "A7")
+        Sunspot.commits
+        assert_equal [auto], Auto.search { keywords "a7"}.results
+    end
+
 end

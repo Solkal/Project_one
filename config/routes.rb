@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root "users#index"
   resources :clients
-  resources :autos
-
-  get "search/query"
+  resources :autos do
+    collection do
+      get :search
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

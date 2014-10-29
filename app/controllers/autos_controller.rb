@@ -3,12 +3,19 @@ class AutosController < ApplicationController
 	before_action :set_auto, only: [:edit, :update, :destroy, :show]
 	
 	def index
-   @search = Auto.search do
-     keywords params[:search]
-   end
-   @autos = @search.results
+   @autos= Auto.all
 	end
-
+	
+	def search
+		@search = Auto.search do
+   		keywords params[:query]
+   	end
+   	@autos = @search.results
+    respond_to do |format|
+      format.html { render action: "index" }
+    end
+	end
+	
 	def new
 		@auto = Auto.new
 	end

@@ -30,10 +30,5 @@
 <%= link_to 'Dodaj nowy samochód', new_auto_path %>
 <h2>Wyszukaj samochód:</h2>
 
-<%= form_tag autos_path, method: 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Szukaj", name: nil %>
-  </p>
-<% end %>
+<%= render 'search' %>
 <br>

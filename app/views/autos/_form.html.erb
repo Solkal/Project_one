@@ -1,16 +1,4 @@
 <%= simple_form_for(@auto) do |f| %>
-  <% if @auto.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@auto.errors.count, "error") %> prohibited this auto from being saved:</h2>
-
-      <ul>
-      <% @auto.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <%= f.input :make, label: "Marka" %>
   <%= f.input :model, label: "Model" %>
   <%= f.input :year, label: "Rok produkcji" %>

@@ -30,6 +30,7 @@ gem 'simple_form'
 # Use factory girl for testing.
 group :test do
   gem 'factory_girl_rails'
+ 	gem 'sunspot_test'
 end
 
 gem 'sunspot_rails'
@@ -37,6 +38,8 @@ gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in developm
 
 # gem 'twitter-typeahead-rails'
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
