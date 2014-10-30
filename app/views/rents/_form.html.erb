@@ -1,5 +1,0 @@
-<%= simple_form_for @rent do |f| %>
-  <%= f.association :client, label: "Osoba wypożyczająca:", as: :select %>
-  <%= f.association :auto, label: "Samochód do wypożyczenia:", as: :radio_buttons %>
-  <%= f.button :submit %>
-<% end %>
