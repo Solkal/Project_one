@@ -3,6 +3,7 @@ class RentsController < ApplicationController
 
   def index
     @rents = Rent.all
+    @rent = Rent.new
   end
 
   def new
@@ -10,11 +11,21 @@ class RentsController < ApplicationController
   end
 
   def create
+    sleep(5)
     @rent = Rent.new(permitted_params)
     if @rent.save
-      redirect_to rents_path, notice: 'Rent was successfully created.' 
+      if request.xhr?
+        @rents = Rent.all
+        render partial: 'table', locals: { rents: Rent.all }
+      else
+        redirect_to rents_path, notice: 'Auto is yours!'
+      end
     else
-      render :new
+      if request.xhr?
+        render body: "Error", locals: { rent: @rent}
+      else
+        render :new
+      end
     end
   end
 
@@ -34,13 +45,18 @@ class RentsController < ApplicationController
 
   def destroy
     @rent.destroy
-    redirect_to rents_path, notice: 'Rent was successfully deleted.'
+    if request.xhr?
+      @rents = Rent.all
+      render partial: 'table', locals: { rents: Rent.all }
+    else
+      redirect_to rents_path, notice: 'Rent was successfully deleted.'
+    end
   end
 
   private
 
   def permitted_params
-    params.require(:rent).permit([:client_id, :car_id, :date_start, :date_end])
+    params.require(:rent).permit([:client_id, :auto_id, :date_start, :date_end])
   end
 
   private 
